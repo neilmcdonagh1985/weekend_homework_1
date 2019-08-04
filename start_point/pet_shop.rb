@@ -1,3 +1,5 @@
+require ('pry')
+
 def pet_shop_name(pet_shop)
   return pet_shop[:name]
 end
@@ -91,4 +93,39 @@ end
 
 def add_pet_to_customer(customer, new_pet)
   customer[:pets].push(new_pet)
+end
+
+# optional
+
+def customer_can_afford_pet(customer, pet)
+  if customer[:cash] >= pet[:price]
+    return true
+  end
+end
+
+def customer_can_afford_pet(customer, pet)
+  if customer[:cash] >= pet[:price]
+    return true
+  end
+  return false
+end
+
+def customer_can_afford_pet(customer, pet)
+  if customer[:cash] >= pet[:price]
+    return true
+  end
+  return false
+end
+
+# error expected:1 actual:2. tried using pry - need advice
+
+def sell_pet_to_customer(pet_shop, pet_to_sell, customer)
+  for pet_for_sale in pet_shop[:pets]
+    if pet_for_sale[:name] == pet_to_sell
+      customer[:pets].push(pet_to_sell)
+      pet_shop[:admin][:pets_sold] += 1
+      customer[:cash] -= pet_to_sell[:price]
+      pet_shop[:admin][:total_cash] += pet_to_sell[:price]
+    end
+  end
 end
