@@ -26,30 +26,25 @@ def stock_count(pet_shop)
   pet_shop[:pets].length
 end
 
-# def pets_by_breed(pet_shop, breed)
-#   for pet in pet_shop[:pets]
-#     if pet[:breed] != breed
-#       pet_shop[:pets].delete(pet)
-#     end
-#   end
-#   return pet_shop[:pets]
-# end
+def pets_by_breed(pet_shop, breed)
+  pets = []
+  for pet in pet_shop[:pets]
+    if pet[:breed] == breed
+      pets.push(pet)
+    end
+  end
+  return pets
+end
 
-# def pets_by_breed(pet_shop, breed)
-#   for pet in pet_shop[:pets]
-#     if pet[:breed] != breed
-#       pet_shop[:pets].delete(pet)
-#     end
-#   end
-# end
-
-# def pets_by_breed(pet_shop, breed)
-#   for pet in pet_shop[:pets]
-#     if pet[:breed] != breed
-#       pet_shop[:pets].slice
-#     end
-#   end
-# end
+def pets_by_breed(pet_shop, breed)
+  pets = []
+  for pet in pet_shop[:pets]
+    if pet[:breed] == breed
+      pets.push(pet)
+    end
+  end
+  return pets
+end
 
 
 def find_pet_by_name(pet_shop, name)
